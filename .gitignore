@@ -1,0 +1,20 @@
+node_modules/
+.next/
+out/
+dist/
+.vercel/
+# Instruções locais de desenvolvimento, não necessárias ao produto.
+/prompt.txt
+test-results/
+playwright-report/
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+.validation/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tmp
