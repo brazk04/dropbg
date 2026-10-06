@@ -2,6 +2,8 @@
 
 Remova o fundo de imagens gratuitamente, sem cadastro e com processamento no seu dispositivo. Compare o resultado, refine os contornos, personalize o cenário e baixe um PNG na resolução original.
 
+[Live Demo](https://dropbg-self.vercel.app) · [Repository](https://github.com/brazk04/dropbg)
+
 ## Principais funcionalidades
 
 - Seleção, drag and drop e colagem de PNG, JPG/JPEG e WebP.
@@ -124,13 +126,15 @@ Modelo: MIT declarada pelo exportador; Transformers.js Apache-2.0; ONNX Runtime 
 
 ## Deploy e SEO
 
-Não foi feito commit, push, conexão GitHub ou deploy. Para Vercel: projeto Next.js, Node 22, instalação `npm ci`, build `npm run build`, output padrão. Assets em `public/`; `.validation/` não é dependência. Next/font obtém fontes durante build. HTTPS para contexto seguro/WebGPU.
+Publicado na Vercel em https://dropbg-self.vercel.app, com repositório público https://github.com/brazk04/dropbg. Projeto `dropbg`, Next.js, Node 22, diretório raiz e comandos/output detectados pelo framework. Integração GitHub conectada, com `main` como branch de produção; pushes nessa branch disparam novos builds. Assets em `public/`; `.validation/` não é dependência. Next/font obtém fontes durante build. HTTPS para contexto seguro/WebGPU.
 
 Configuração sem secrets em `.env.example`:
 
 - `NEXT_PUBLIC_SITE_URL`: origem pública HTTPS sem caminho, definida antes do build para domínio próprio. Na Vercel, fallback automático para `VERCEL_PROJECT_PRODUCTION_URL`.
-- `NEXT_PUBLIC_GITHUB_URL`: endereço real do repo. Sem ele, link Sobre o projeto em vez de GitHub fictício.
+- `NEXT_PUBLIC_GITHUB_URL`: override opcional; o padrão é o repositório real `https://github.com/brazk04/dropbg`.
 
 Title/description, Open Graph pt_BR, Twitter card e OG PNG local 1200×630; favicon SVG, manifest, robots permissivo e sitemap das quatro rotas públicas. Canonicals usam uma única origem. Sem domínio configurado, build local pode avisar metadataBase e gerar sitemap vazio; não há canonical ou domínio inventado. A Vercel fornece origem automaticamente. Revalide canonical/sitemap/OG no host definitivo antes de indexar.
 
-Revise git status, QA, créditos e configuração pública antes de versionar. Envs reais, logs, temporários, node_modules, .next e artefatos de QA estão ignorados; `.env.example` permanece versionável.
+Revise git status, QA, créditos e configuração pública antes de versionar. Envs reais, logs, temporários, node_modules, .next e artefatos de QA estão ignorados; `.env.example` permanece versionável. `.vercelignore` também exclui esses arquivos do upload pela CLI, além das instruções locais `prompt.txt`. Nenhum token precisa ser incluído no projeto.
+
+As rotas `/privacy` e `/terms` redirecionam permanentemente para `/privacidade` e `/termos`. O domínio de produção fornecido pela Vercel alimenta metadataBase, canonical, imagem OG, robots e sitemap automaticamente, sem env extra. Preview e URLs individuais de deployment mantêm a proteção de autenticação da Vercel; a URL oficial acima é pública. [Validação da publicação](docs/DEPLOYMENT.md).
