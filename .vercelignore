@@ -1,0 +1,17 @@
+.git/
+.vercel/
+node_modules/
+.next/
+.validation/
+test-results/
+playwright-report/
+out/
+dist/
+.env*
+*.log
+*.tmp
+*.tsbuildinfo
+next-env.d.ts
+prompt.txt
+.idea/
+.vscode/

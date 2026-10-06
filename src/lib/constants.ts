@@ -6,4 +6,4 @@ export const MAX_FILE_SIZE = 25 * 1024 * 1024;
 export const MAX_IMAGE_PIXELS = 16_000_000;
 export const MAX_IMAGE_EDGE = 8192;
 // Configure o endereço real do repositório quando ele for publicado.
-export const GITHUB_URL = process.env.NEXT_PUBLIC_GITHUB_URL;
+export const GITHUB_URL = process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/brazk04/dropbg";
